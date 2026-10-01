@@ -1,3 +1,18 @@
+参考：https://weibo.com/ttarticle/p/show?id=2309405328137356705848<br>
+核心结论：这些画面由不同组件控制<br>
+
+|显示阶段|控制者|本机解决方法
+|GPD BIOS Logo|UEFI 固件|操作系统无法控制|
+|Limine 菜单|Limine|interface_rotation: 90|
+|UKI Arch Linux Logo|systemd-stub / UKI splash|取消 --splash|
+|启动文字与 LUKS 提示|Linux framebuffer console|fbcon=rotate:1|
+|Plasma 登录界面|plasma-login-manager 的独立 KWin 会话|
+|同步正确的 kwinoutputconfig.json|
+|登录后的桌面|当前用户的 KWin 输出配置|在 Plasma 显示设置中调整|
+|桌面自动旋转|mxc4005 + iio-sensor-proxy + KWin|启用 KWin autoRotatePolicy|
+
+
+
 # 一、GPDMicroPC2BootRotate
 ## 在安装了limine启动器的GPD Micro PC 2上旋转屏幕方向<br>
 只适用于Limine启动器<br>
@@ -68,3 +83,10 @@ smbclient -L <nas_ip> -U username
 ```
 sudo pacman -S kio-extras samba kdenetwork-filesharing
 ```
+可能的解决方式：
+1.直接挂载到文件夹名
+2.装smb4k
+3.cifs挂载
+
+
+# 四、登录界面的旋转
