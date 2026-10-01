@@ -19,5 +19,5 @@ search file location<br>
 sudo find /boot -maxdepth 4 -type f -name limine.conf -print
 
 注意： /etc/default/limine 具有最高优先级，并覆盖所有嵌入配置。因此，在附加内核参数时，建议使用 +=。示例：<br>
-'KERNEL_CMDLINE[default]+=rw root=UUID=... '<br>
-'KERNEL_CMDLINE[default]+=quiet splash initrd=/amd-ucode.img'<br>
+'''KERNEL_CMDLINE[default]+=rw root=UUID=... <br>
+KERNEL_CMDLINE[default]+=quiet splash initrd=/amd-ucode.img'''<br>
