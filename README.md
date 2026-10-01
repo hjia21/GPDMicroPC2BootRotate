@@ -19,16 +19,31 @@
 
 备注<br>
 cmdline相关的位置与设置：<br>
-1.如果不存在 /etc/limine-entry-tool.conf，请将其复制到 /etc/default/limine<br>
-2./proc/cmdline 为当前的mcdline<br>
-3./etc/kernel/cmdline可能开始没有<br>
-
-查找文件位置<br>
-sudo find /boot -maxdepth 4 -type f -name limine.conf -print<br>
+增加内核参数的位置应该有两个：<br>
+/etc/kernel/cmdline（这个刚开始可能没有）或者/etc/default/limine
+所以可以把参数加到/etc/default/limine里面<br>
+/proc/cmdline 为当前的mcdline,可以先查看参考<br>
 
 注意： /etc/default/limine 具有最高优先级，并覆盖所有嵌入配置。因此，在附加内核参数时，建议使用 +=。示例：<br>
 ```KERNEL_CMDLINE[default]+=rw root=UUID=... ```<br>
 ```KERNEL_CMDLINE[default]+=quiet splash initrd=/amd-ucode.img```<br>
+举例：
+/etc/default/limine 里面显示的是：
+```ESP_PATH="/boot"```
+```KERNEL_CMDLINE[default]+="quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=9ceb7b71-f0ad-410a-b0b5-035a859fcf91"```
+```BOOT_ORDER="*, *lts, *fallback, Snapshots"```
+增加后的内容是
+```ESP_PATH="/boot"```
+```KERNEL_CMDLINE[default]+="quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=9ceb7b71-f0ad-410a-b0b5-035a859fcf91 fbcon=rotate:1 video=DSI-1:panel_orientation=right_side_up"```
+```BOOT_ORDER="*, *lts, *fallback, Snapshots"```
+
+
+
+
+查找文件位置<br>
+sudo find /boot -maxdepth 4 -type f -name limine.conf -print<br>
+
+
 
 # 中文输入法安装<br>
 ```sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-qt```<br>
