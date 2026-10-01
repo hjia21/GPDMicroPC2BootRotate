@@ -4,7 +4,7 @@
 
 环境：CachyOS+Limine+原生竖屏的显示器<br>
 增加内核参数，使竖屏显示的界面改为横屏，方便操作<br>
-## 第一种方法，这种更新后会掉设置：
+## 第一种方法（这种更新后可能会掉设置）：
 在limine.conf中增加如下内容：<br>
 1.在文件开始部分加入：interface_rotation:90<br>
 2：在cmdline行中增加 fbcon=rotate:1 video=DSI-1:panel_orientation=right_side_up,可以用定义的方式：<br>
@@ -57,3 +57,14 @@ sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-
 编辑：/etc/environment<br>
 增加```XMODIFIERS=@im=fcitx``` for XWayland application<br>
 其他的按照：https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma的说法，不要动<br>
+
+# 三、Dolphin网络里面看不到NAS文件夹<br>
+kio_smb只列出匿名共享的文件夹，可以用这个验证：<br>
+```
+smbclient -L <nas_ip> -U username
+```
+如果能看到全部共享就说明是这个问题<br>
+然后先安装kio-extras samba kdenetwork-filesharing 尝试一下<br>
+```
+sudo pacman -S kio-extras samba kdenetwork-filesharing
+```
