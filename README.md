@@ -90,7 +90,7 @@ sudo pacman -S kio-extras samba kdenetwork-filesharing
 
 
 # 四、登录界面的旋转
-先在设置-登录屏幕里面应用一下（可能就同步过去了），不行再尝试下面的方法<br>
+先把登录后的界面设置好，然后在设置-登录屏幕里面应用一下（可能就同步过去了），不行再尝试下面的方法<br>
 ~/.config/kwinoutputconfig.json 对应登录后的界面，里面有transform的字段设置旋转<br>
 /var/lib/plasmalogin/.config/kwinoutputconfig.json    对应登录界面<br>
 
