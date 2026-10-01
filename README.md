@@ -7,8 +7,7 @@
 |Limine 菜单|Limine|interface_rotation: 90|
 |UKI Arch Linux Logo|systemd-stub / UKI splash|取消 --splash|
 |启动文字与 LUKS 提示|Linux framebuffer console|fbcon=rotate:1|
-|Plasma 登录界面|plasma-login-manager 的独立 KWin 会话|
-|同步正确的 kwinoutputconfig.json|
+|Plasma 登录界面|plasma-login-manager 的独立 KWin 会话|同步正确的 kwinoutputconfig.json|
 |登录后的桌面|当前用户的 KWin 输出配置|在 Plasma 显示设置中调整|
 |桌面自动旋转|mxc4005 + iio-sensor-proxy + KWin|启用 KWin autoRotatePolicy|
 
