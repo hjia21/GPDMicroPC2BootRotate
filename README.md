@@ -90,3 +90,10 @@ sudo pacman -S kio-extras samba kdenetwork-filesharing
 
 
 # 四、登录界面的旋转
+~/.config/kwinoutputconfig.json 对应登录后的界面
+/var/lib/plasmalogin/.config/kwinoutputconfig.json    对应登录界面
+
+
+
+
+
