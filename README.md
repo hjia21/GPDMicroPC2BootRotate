@@ -83,15 +83,16 @@ smbclient -L <nas_ip> -U username
 ```
 sudo pacman -S kio-extras samba kdenetwork-filesharing
 ```
-可能的解决方式：
-1.直接挂载到文件夹名
-2.装smb4k
-3.cifs挂载
+可能的解决方式：<br>
+1.直接挂载到文件夹名<br>
+2.装smb4k<br>
+3.cifs挂载<br>
 
 
 # 四、登录界面的旋转
-~/.config/kwinoutputconfig.json 对应登录后的界面
-/var/lib/plasmalogin/.config/kwinoutputconfig.json    对应登录界面
+先在设置-登录屏幕里面应用一下（可能就同步过去了），不行再尝试下面的方法<br>
+~/.config/kwinoutputconfig.json 对应登录后的界面，里面有transform的字段设置旋转<br>
+/var/lib/plasmalogin/.config/kwinoutputconfig.json    对应登录界面<br>
 
 
 
