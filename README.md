@@ -1,17 +1,17 @@
-# GPDMicroPC2BootRotate
-# 在安装了limine启动器的GPD Micro PC 2上旋转屏幕方向
-# 只适用于Limine启动器
+# 一、GPDMicroPC2BootRotate
+## 在安装了limine启动器的GPD Micro PC 2上旋转屏幕方向<br>
+只适用于Limine启动器<br>
 
 环境：CachyOS+Limine+原生竖屏的显示器<br>
 增加内核参数，使竖屏显示的界面改为横屏，方便操作<br>
-# 第一种方法，这种更新后会掉设置：
+## 第一种方法，这种更新后会掉设置：
 在limine.conf中增加如下内容：<br>
 1.在文件开始部分加入：interface_rotation:90<br>
 2：在cmdline行中增加 fbcon=rotate:1 video=DSI-1:panel_orientation=right_side_up,可以用定义的方式：<br>
 --定义，这个也放到开始位置：${addedconf}=fbcon=rotate:1 video=DSI-1:panel_orientation=right_side_up<br>
 --使用，在对应的cmdline行后面加上：${addedconf}<br>
 
-# 第二种方法：<br>
+## 第二种方法：<br>
 参考https://wiki.archlinux.org.cn/title/Limine 第6.1.1配置<br>
 ~~首先查看/proc/cmdline的内核参数，确认原始信息<br>
 在/etc/kernel/cmdline中增加上述横屏内容：<br>
@@ -49,7 +49,7 @@ sudo find /boot -maxdepth 4 -type f -name limine.conf -print<br>
 
 
 
-# 中文输入法安装<br>
+# 二、中文输入法安装<br>
 ```
 sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-qt
 ```
