@@ -1,7 +1,8 @@
 参考：https://weibo.com/ttarticle/p/show?id=2309405328137356705848<br>
 核心结论：这些画面由不同组件控制<br>
 
-|显示阶段|控制者|本机解决方法
+|显示阶段|控制者|本机解决方法|
+|---|---|---|
 |GPD BIOS Logo|UEFI 固件|操作系统无法控制|
 |Limine 菜单|Limine|interface_rotation: 90|
 |UKI Arch Linux Logo|systemd-stub / UKI splash|取消 --splash|
